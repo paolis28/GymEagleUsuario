@@ -1,0 +1,63 @@
+.containerInicio {
+  background-color: black;
+  width: 100%;
+}
+
+.letraInicio {
+  text-align: center;
+  position: relative;
+  opacity: 0; 
+  animation: aparecer 1s forwards; 
+}
+
+.letraInicio h1 {
+  color: white;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.aparicion {
+  animation: aparecer 1s forwards; 
+}
+
+.letraInicio .linea {
+  width: 25%; 
+  height: 2%;
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; 
+}
+
+.linea-izquierda {
+  left: 0;
+  animation: aparecer 1s forwards 0.3s;
+}
+
+.linea-derecha {
+  right: 0;
+  animation: aparecer 1s forwards 0.3s; 
+}
+
+.LetraDescripcion{
+  padding: 4%;
+  text-align: center;
+}
+.LetraDescripcion p{
+  font-size: 120%;
+  margin-right: 5%;
+  color: white
+}
+
+.preciosComponentsInicio{
+  margin-left: 18%;
+  display: flex;
+}
+@keyframes aparecer {
+  to {
+    opacity: 1;
+  }
+}

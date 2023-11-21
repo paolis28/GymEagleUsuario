@@ -1,0 +1,32 @@
+
+.contenedor-producto-gym {
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 2%;
+  overflow: hidden;
+  max-width: 40%;
+  margin-bottom: 4%;
+}
+
+.encabezado-producto-gym {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.icono-gym {
+  color: white;
+  font-size: 2em;
+}
+
+h2,
+.precio-gym,
+.descripcion-gym {
+  color: white;
+  margin: 0;
+}
+.iconoCardInicio{
+  margin: 3%;
+}

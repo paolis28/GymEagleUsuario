@@ -1,56 +1,45 @@
-import React from 'react';
-import Cards from './Components/Cards/CardsRutina'
-import './Inicio.css'
 
-function Inicio(){
-    return(
-        <div className="contenedorInicio">
-    
-        <header className="header">
-          <div className="logo">
-            <h1>Eagle Gym</h1>
-          </div>
-          <nav className="nav-links">
-            {/* <a href="">Inicio</a>
-            <a href="">Servicios</a>
-            <a href="">Iniciar Sesión</a> */}
-          </nav>
-        </header>
-        <section className="hero">
-          <h1>Bienvenido al Gimnasio Eagle Gym</h1>
-          <p>Descubre una vida más saludable y activa con nosotros.</p>
-          {/* <a  className="cta-button">Únete Ahora</a> */}
-        </section>
-        <section className="about">
-          <h2>Quiénes Somos</h2>
-          <p>Somos un gimnasio dedicado a mejorar tu bienestar físico y mental. Ofrecemos una amplia gama de servicios y clases para ayudarte a alcanzar tus objetivos.</p>
-        </section>
-        <section className="features">
-          <div className="feature">
-            <h3>Servicios Personalizados</h3>
-            <p>Ofrecemos planes de entrenamiento personalizados adaptados a tus necesidades individuales.</p>
-          </div>
-          <div className="feature">
-            <h3>Precios Asequibles</h3>
-            <p>Nuestros planes son accesibles para todos, sin importar tu presupuesto.</p>
-          </div>
-        </section>
-        <section className="cards">
-          <Cards
-            title="Nuestros Precios"
-            description="Conoce nuestros planes y tarifas."
-          />
-          <Cards
-            title="Nuestras Rutinas"
-            description="e"
-          />
-          <Cards
-            title="si"
-            description="a"
-          />
-        </section>
+import React from 'react';
+import Carrusel from './Components/Carousel.jsx';
+import Precios from './Components/ComponentsInicio/Card.jsx';
+import Navbar from './Components/ComponentsInicio/Navbar.jsx';
+import './css/Inicio.css';
+
+const Inicio = () => {
+  return (
+    <div className="containerInicio">
+      <Navbar />
+      <div className="letraInicio">
+        <div className="linea linea-izquierda"></div>
+        <h1 className="aparicion">Bienvenido a Nuestro Gimnasio</h1>
+        <div className="linea linea-derecha"></div>
       </div>
-    );
-}
+      <div>
+        <Carrusel />
+      </div>
+      <div className='LetraDescripcion' style={{ width: '100%' }}>
+        <p>
+          Descubre los beneficios de mantener un estilo de vida saludable en nuestro gimnasio.
+        </p>
+        <p>
+          Ayudándote a alcanzar tus metas de acondicionamiento físico.
+        </p>
+      </div>
+      <div className='preciosComponentsInicio' style={{ display: 'flex' }}>
+        <Precios
+          titulo="Pagos por día"
+          precio="$30"
+          descripcion="Accede a todas nuestras máquinas por un solo día."
+        />
+        <Precios
+          titulo="Pagos por mensualidad"
+          precio="$250"
+          descripcion="Accede a todas nuestras máquinas y un usuario y contraseña única para acceder y ver todas nuestras rutinas"
+          style={{ marginLeft: '10%' }} 
+        />
+      </div>
+    </div>
+  );
+};
 
 export default Inicio;
