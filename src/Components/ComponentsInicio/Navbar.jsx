@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 import Logo from '../../img/LogoGym.png';
+import Swal from 'sweetalert2'
+// import 'sweetalert2/src/sweetalert2.scss'
 
 function Navbar() {
   const [body, setBody] = useState({celular: '', contraseña: ''});
@@ -14,6 +16,14 @@ function Navbar() {
   // const [username, setUsername] = useState('');
   // const [password, setPassword] = useState('');
 
+  const messageAlert = (alertValues) => {
+    Swal.fire({
+      title: alertValues.title,
+      text: alertValues.text,
+      icon: alertValues.icon,
+      confirmButtonText: 'Aceptar'
+    });
+  };
   const handleLoginClick = () => {
     setShowLoginForm(!showLoginForm);
   };
@@ -30,17 +40,21 @@ function Navbar() {
     event.preventDefault();
     const permitido = /^[1-9]\d{9}$/;
     if (!body.celular || !body.contraseña) {
-      alert('Todos los campos son obligatorios')
+      alertValues = {title: 'Oops!', text: 'Los campos son obligatorios', icon: 'error'};
+      messageAlert(alertValues);
     }else if (!permitido.test(body.celular)) {
-      alert('El número de celular debe ser de 10 digitos y no empezar con cero')
+      alertValues = {title: 'Oops!', text: 'El número de celular debe ser de 10 digitos y no empezar con cero', icon: 'error'};
+      messageAlert(alertValues);
     }else{
       try {
         await axios.post('http://localhost:3001/gimnasio/clientesrutina/login', body)
-        alert('Datos aceptados')
+        alertValues = {title: 'Bienvenido!', text: 'Bienvenido '+body.usuario , icon: 'success'};
+          messageAlert(alertValues);
         navigate('/rutina');
       } catch (error) {
         console.log(error)
-        alert('Datos incorrectos')
+        alertValues = {title: 'No encontrado!', text: 'El usuario o la contraseña son incorrectos' , icon: 'warning'};
+          messageAlert(alertValues); 
       }
     }
   }
