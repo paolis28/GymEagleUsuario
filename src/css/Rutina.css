@@ -17,12 +17,9 @@
   .rutinas-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    
+    justify-content: center;
   }
   
-  
-
  .lineaRutina {
     width: 60%; 
     height: 0.2%;

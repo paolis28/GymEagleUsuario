@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Carrusel from './Components/Carousel.jsx';
 import Precios from './Components/ComponentsInicio/Card.jsx';
@@ -6,6 +5,7 @@ import Navbar from './Components/ComponentsInicio/Navbar.jsx';
 import './css/Inicio.css';
 
 const Inicio = () => {
+  
   return (
     <div className="containerInicio">
       <Navbar />

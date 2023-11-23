@@ -5,13 +5,14 @@ import '../css/Rutina.css';
 const Rutinas = () => {
   const [rutinas, setRutinas] = useState([]);
 
-  useEffect(() => {
-    
-    fetch('apiRuta')
-      .then(response => response.json())
-      .then(data => setRutinas(data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []); 
+  useEffect(()=>{
+    const getRutinas = () =>{
+      fetch('http://localhost:3001/gimnasio/rutina/buscar')
+      .then(res => res.json())
+      .then(res => setRutinas(res))
+    }
+    getRutinas()
+  },[]) 
 
   return (
     <div className="rutina-container">

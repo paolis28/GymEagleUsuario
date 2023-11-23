@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Inicio from './Inicio';
-import Rutina from './pages/Rutinas'
+import Rutina from './pages/Rutinas';
 
-import Footer from './Components/Footer'
+import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 
 
