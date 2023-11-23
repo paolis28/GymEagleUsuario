@@ -1,40 +1,38 @@
 .rutina-card {
-    background-color: black;
-    color: white;
-    border: 2px solid rgb(255, 255, 255);
-    padding: 1%;
-    margin: 1%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgb(255, 255, 255);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .rutina-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .rutina-card h2 {
-    color: yellow;
-    border-bottom: 2px solid yellow;
-    /* padding-bottom: 10px;
-    margin-bottom: 10px; */
-  }
-  
-  .rutina-card p {
-    margin: 1% 0;
-  }
-  
-  .rutina-card .resaltar {
-    color: yellow;
-    font-weight: bold;
-  }
-  
-  .imagen-container {
-    max-height: 200px; 
-    overflow: hidden;
-  }
-  
-  .rutina-imagen {
-    width: 100%;
-    height: auto;
-  }
+  background-color: black;
+  color: white;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+  transition: transform 0.3s ease-in-out;
+  margin: 1%; 
+}
+
+.rutinas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+}
+
+.rutina-card:hover {
+  transform: scale(1.05);
+}
+
+.rutina-card h2 {
+  color: yellow;
+  border-bottom: 2px solid yellow;
+}
+
+.rutina-card .resaltar {
+  color: yellow;
+  font-weight: bold;
+}
+
+.imagen-container {
+  overflow: hidden;
+}
+
+.rutina-imagen {
+  width: 100%;
+  height: auto;
+}

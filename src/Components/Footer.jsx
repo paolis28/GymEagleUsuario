@@ -10,9 +10,9 @@ function Footer() {
         <div className="footer-content">
           <div className="contact-info">
             <h3>Contacto</h3>
-            <p><FaPhone /> Teléfono:</p>
+            {/* <p><FaPhone /> Teléfono:</p> */}
             <p><FaEnvelope /> Correo electrónico: </p>
-            <p><FaMapMarkerAlt /> Dirección: </p>
+            <p><FaMapMarkerAlt /> Dirección: Colonia francisco I Madero, Tuxtla Gutierrez Chiapas </p>
           </div>
 
           <div className="social-icons">
