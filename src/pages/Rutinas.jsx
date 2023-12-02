@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RutinaCard from '../Components/componentsRutina/RutinaCard';
 import '../css/Rutina.css';
+import Chat from '../Components/componentsRutina/chat'
 
 const Rutinas = () => {
   const [rutinas, setRutinas] = useState([]);
@@ -24,6 +25,7 @@ const Rutinas = () => {
           <RutinaCard key={index} {...rutina} />
         ))}
       </div>
+      <Chat></Chat>
     </div>
   );
 };
