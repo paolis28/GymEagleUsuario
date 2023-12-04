@@ -14,6 +14,9 @@ const Chat = () => {
   const [storedMessages, setStoredMessages] = useState([])
   const [firstTime, setfirstTime] = useState(false)
 
+  const [chatVisible, setChatVisible] = useState(false);
+  const [isCircular, setIsCircular] = useState(true);
+
   const url = "http://localhost:4000/api/"
 
   useEffect(() =>{
@@ -80,17 +83,25 @@ const Chat = () => {
     setDisabled(true)
   }
 
+  const toggleChat = () => {
+    setChatVisible(!chatVisible);
+    setIsCircular(!chatVisible);
+  };
+
   return (
-    <div>
-       <div className="container mt-3">
+    <div className={`chat-container ${chatVisible ? 'visible' : 'hidden'} ${isCircular ? 'circular' : 'rectangular'}`}>
+     <div className="chat-header" onClick={toggleChat}>
+        Chat
+      </div>
+       <div className="chat-content mt-3">
 
 <div className="card shadow border-0">
 <div className="card-body">
-  <h5 className="text-center mb-3">CHAT</h5>
+  {/* <h5 className="text-center mb-3">CHAT</h5> */}
 
   {/* nickname */}
 
-  <form onSubmit={nicknameSubmit}>
+  <form className="bottom-form" onSubmit={nicknameSubmit}>
     <div className="d-flex mb-3">
       <input type="text" className="form-control" id="nickname" placeholder="Nickname..." disabled={disabled} onChange={e => setNickname(e.target.value)} value={nickname} required/>
       <button className="btn btn-success mx-3" type="submit" id="btn-nickname" disabled={disabled}>Establecer</button>
@@ -99,7 +110,7 @@ const Chat = () => {
 
   {/* chat form */}
 
-  <form onSubmit={handlerSubmit}>
+  <form className="bottom-form" onSubmit={handlerSubmit}>
     <div className="d-flex">
       <input type="text" className="form-control" placeholder="Mensaje..." onChange={e => setMessage(e.target.value)} value={message}/>
       <button className="btn btn-success mx-3" type="submit">Enviar</button>
