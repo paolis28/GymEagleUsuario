@@ -95,14 +95,26 @@ const Chat = () => {
       </div>
        <div className="chat-content mt-3">
 
-<div className="card shadow border-0">
+<div className="card  border-0">
 <div className="card-body">
-  {/* <h5 className="text-center mb-3">CHAT</h5> */}
+  
+   {/* chat stored messages */}
+   <small className="text-center text-muted">... Mensajes guardados ...</small>
+  {storedMessages.map((message, index) => (
+    <div key={index} className={`d-flex p-3 ${message.from === nickname ? "justify-content-end" : "justify-content-start"}`}>
+      <div className={`card mb-3 shadow border-1 ${message.from === nickname ? "bg-success bg-opacity-25" : "bg-light"}`}>
+        <div className="card-body">
+          <small className="text-muted">{message.from}: {message.message}</small>
+        </div>
+      </div>
+    </div>
+
+  ))}
 
   {/* nickname */}
 
-  <form  onSubmit={nicknameSubmit}>
-    <div className="mb-3">
+  <form className="recuadroIngresar bottom-form" onSubmit={nicknameSubmit}>
+    <div className="d-flex mb-3">
       <input type="text" className="form-control" id="nickname" placeholder="Nickname..." disabled={disabled} onChange={e => setNickname(e.target.value)} value={nickname} required/>
       <button className="btn btn-success mx-3" type="submit" id="btn-nickname" disabled={disabled}>Establecer</button>
     </div>
@@ -110,8 +122,8 @@ const Chat = () => {
 
   {/* chat form */}
 
-  <form  onSubmit={handlerSubmit}>
-    <div >
+  <form className="bottom-form" onSubmit={handlerSubmit}>
+    <div className="d-flex">
       <input type="text" className="form-control" placeholder="Mensaje..." onChange={e => setMessage(e.target.value)} value={message}/>
       <button className="btn btn-success mx-3" type="submit">Enviar</button>
     </div>
@@ -135,18 +147,7 @@ const Chat = () => {
 
   ))}
 
-  {/* chat stored messages */}
-  <small className="text-center text-muted">... Mensajes guardados ...</small>
-  {storedMessages.map((message, index) => (
-    <div key={index} className={`d-flex p-3 ${message.from === nickname ? "justify-content-end" : "justify-content-start"}`}>
-      <div className={`card mb-3 shadow border-1 ${message.from === nickname ? "bg-success bg-opacity-25" : "bg-light"}`}>
-        <div className="card-body">
-          <small className="text-muted">{message.from}: {message.message}</small>
-        </div>
-      </div>
-    </div>
-
-  ))}
+ 
 
 </div>
 </div>
