@@ -101,8 +101,8 @@ const Chat = () => {
 
   {/* nickname */}
 
-  <form className="bottom-form" onSubmit={nicknameSubmit}>
-    <div className="d-flex mb-3">
+  <form  onSubmit={nicknameSubmit}>
+    <div className="mb-3">
       <input type="text" className="form-control" id="nickname" placeholder="Nickname..." disabled={disabled} onChange={e => setNickname(e.target.value)} value={nickname} required/>
       <button className="btn btn-success mx-3" type="submit" id="btn-nickname" disabled={disabled}>Establecer</button>
     </div>
@@ -110,8 +110,8 @@ const Chat = () => {
 
   {/* chat form */}
 
-  <form className="bottom-form" onSubmit={handlerSubmit}>
-    <div className="d-flex">
+  <form  onSubmit={handlerSubmit}>
+    <div >
       <input type="text" className="form-control" placeholder="Mensaje..." onChange={e => setMessage(e.target.value)} value={message}/>
       <button className="btn btn-success mx-3" type="submit">Enviar</button>
     </div>
