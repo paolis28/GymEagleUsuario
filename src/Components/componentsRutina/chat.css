@@ -12,7 +12,8 @@
 
 .chat-container.circular {
   border-radius: 50%;
-  width: 60px;
+  width: 8%;
+  height: 5%;
 }
 
 .chat-container.circular .chat-content {
@@ -29,17 +30,17 @@
 
 .chat-container.rectangular {
   width: 20%;
-  height: 50%;
+  height: 80%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
 }
 
-/* .chat-container.rectangular .chat-content {
+.chat-container.rectangular .chat-content {
   flex-grow: 1;
   display: flex;
   flex-direction: column-reverse;
-} */
+}
 
 .chat-header {
   background-color: #3498db;
@@ -60,7 +61,7 @@
 }
 
 .chat-messages {
-
+  max-height: 300px;
   overflow-y: auto;
   padding: 2%;
 }
@@ -84,6 +85,4 @@
   border-radius: 5px;
 }
 
-.recuadroIngresar{
-  margin-top: 50%;
-}
+
